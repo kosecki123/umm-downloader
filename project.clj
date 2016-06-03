@@ -5,8 +5,9 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [
                   [org.clojure/clojure "1.8.0"]
-                  [org.clojure/tools.nrepl "0.2.11"]
-                  [clj-time "0.11.0"]]
+                  [proto-repl "0.1.2"]
+                  [clj-time "0.11.0"]
+                  [clj-http "2.2.0"]]
   :main ^:skip-aot umm-downloader.core
   :target-path "target/%s"
   :profiles {
