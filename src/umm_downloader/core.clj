@@ -79,7 +79,7 @@
 
 (defn read-body-from-url [urls]
   (let [ get (fn [url]
-              (let [[head & lines] (time (:body (http/get url)))]
+              (let [[head & lines] (split-header (time (:body (http/get url))))]
                   (complete-one)
                   (set-header head)
                   (first lines)))]

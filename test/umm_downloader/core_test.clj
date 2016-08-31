@@ -33,3 +33,11 @@
            formatted (map format-date periods)
            expected '("2016-06-02" "2016-05-05")]
       (is (= formatted expected))))
+
+(deftest split-header-destruct
+  (let [ input "header\nrest\nrest\nrest"
+          split (split-header input)
+          [header & rest] split]
+    (is (= split '("header" "rest\nrest\nrest")))
+    (is (= header "header"))
+    (is (= (first rest) "rest\nrest\nrest"))))
