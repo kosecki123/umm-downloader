@@ -1,36 +1,30 @@
 # umm-downloader
 
-FIXME: description
+One purpose tool, download whole UMM dataset from Nordpool page. Workarounds various issues with page like timeouts and other errors.
+
+Tool split the given date range into 7 days periods, process downloads with 4 thread pool, merge results into single CSV file.
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Download and install Lein script from http://leiningen.org/, make sure you have Java installed
+
+    git clone https://github.com/kosecki123/umm-downloader.git
+    cd umm-downloader
+
 
 ## Usage
 
-FIXME: explanation
+Running application without arguments downloads UMM dataset from the beginning till now.
 
-    $ java -jar umm-downloader-0.1.0-standalone.jar [args]
+        lein run
 
-## Options
+Optionally you can specify start and end date by using args
 
-FIXME: listing of options this app accepts.
+        lein run -- --start "2015-02-02" --end "2015-01-01"
 
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
 
 ## License
 
-Copyright © 2016 FIXME
+Copyright © 2016 Piotr Kosiński
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License either version 1.0 or any later version.
