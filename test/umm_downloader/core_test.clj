@@ -15,7 +15,7 @@
           periods (generate-periods start-datetime)
           results (take 3 periods)
           formatted (map format-date results)
-          expected '("2016-06-02" "2016-05-03" "2016-04-03")]
+          expected '("2016-06-02" "2016-05-26" "2016-05-19")]
       (is (= formatted expected))))
 
 (deftest generate-periods-until-tests
@@ -23,7 +23,8 @@
            epoch (t/date-time 2016 05 01)
            periods (generate-periods-until start-datetime epoch)
            formatted (map format-date periods)
-           expected '("2016-06-02" "2016-05-03" "2016-05-01")]
+           expected '("2016-06-02" "2016-05-26" "2016-05-19"
+                      "2016-05-12" "2016-05-05" "2016-05-01")]
       (is (= formatted expected))))
 
 (deftest generate-periods-until-with-same-epoch-as-last-tests
@@ -31,7 +32,8 @@
            epoch (t/date-time 2016 05 05)
            periods (generate-periods-until start-datetime epoch)
            formatted (map format-date periods)
-           expected '("2016-06-02" "2016-05-05")]
+           expected '("2016-06-02" "2016-05-26" "2016-05-19"
+                      "2016-05-12" "2016-05-05")]
       (is (= formatted expected))))
 
 (deftest split-header-destruct
